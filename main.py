@@ -101,9 +101,6 @@ def signup(user: UserRegister = Body(...)):
         f.write(json.dumps(results))
         return user
 
-
-
-
 ### Login a User
 @app.post(
     path="/login",
@@ -189,7 +186,25 @@ def update_a_user():
     tags=["Tweets"]
 )
 def home():
-    return {"Twitter API": "Working!"}
+    """
+    Home 
+    
+    This path operation shows all tweets in the app
+
+    Parameters:
+    - 
+
+    Returns:
+        Returns a json list with all tweets in the app, with the following keys:
+        tweet_id: UUID 
+        content: str 
+        created_at: datetime
+        updated_at: Optional[datetime]
+        by: User 
+    """
+    with open("tweets.json", "r", encoding="utf-8") as f:
+        results = json.loads(f.read())
+        return results
 
 ### Post a tweet
 @app.post(
@@ -229,7 +244,6 @@ def post(tweet: Tweet = Body(...)):
         f.seek(0)
         f.write(json.dumps(results))
         return tweet
-
 
 ### Show a tweet
 @app.get(
