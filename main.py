@@ -75,7 +75,7 @@ class Tweet(BaseModel):
 )
 def signup(user: UserRegister = Body(...)):
     """
-    Signup 
+    SIGNUP 
     
     This path operation register a user in the app
 
@@ -122,7 +122,7 @@ def login():
 )
 def show_all_users():
     """
-    Signup 
+    SHOW_ALL_USERS 
     
     This path operation shows all users in the app
 
@@ -187,7 +187,7 @@ def update_a_user():
 )
 def home():
     """
-    Home 
+    HOME 
     
     This path operation shows all tweets in the app
 
