@@ -84,7 +84,7 @@ def signup(user: UserRegister = Body(...)):
         - user: UserRegister
 
     Returns:
-        Returns a json with the basic user information 
+        Returns a JSON with the basic user information 
         - user_id: UUID
         - email: Emailstr
         - first_name: str
